@@ -10,7 +10,7 @@ function App() {
   const fetchWeatherApi = async () => {
     setIsLoading(true);
     const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=a48e8b89975f48c09a665254231003&q=${countryName}&aqi=no`
+      `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${countryName}&aqi=no`
     );
     if (!response.ok) {
       setIsError(true);
